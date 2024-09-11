@@ -1,0 +1,76 @@
+/*usaremos o glolbal para resetar estilos, modificar o boby e reltilizaremos algumas classes do css*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  color: #141414;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.subtitulo {
+  font-size: 8rem;
+  word-break: break-all;
+  text-transform: uppercase;
+  line-height: 1;
+  max-width: 4ch;
+}
+
+/*SUBTITULO 
+aqui iremos editar um elemento que será reltilizado 
+
+.subtitulo {
+  font-size: 8rem;                     ---tamanho da fonte
+  word-break: break-all;               ---Quebra de texto
+  text-transform: uppercase;           ---Transformar todos em Maiúsculo
+  line-height: 1;                      ---Tamanho da linha
+  max-width: 4ch;                      ---Define o maximo de caracteres por largura
+}
+
+COMO IREMOS UTILIZAR CORES DIFERRENTES DEPENDENDO DA SEÇÃO QUE ELE ESTA, POIS TERÁ MAIS DE UM SUBTITULO
+
+VAMOS DEFINIR A COR DO ELEMENTO NA SEÇÃO QUE ELE ESTARÁ
+nesse caso em "experiencia".
+
+*/
+
+/*PARTE RESPONSIVA GERAL DOS TITULOS*/
+
+@media (max-width: 800px) {
+  .subtitulo {
+    font-size: 3rem;
+    text-transform: capitalize;
+    max-width: initial !important;
+  }
+}
+
+/*
+
+@media (max-width: 800px) {
+  .subtitulo {
+    font-size: 3rem;                              ---Diminuir a fonte do texto
+    text-transform: capitalize;                   ---Removemos o texto em maiúsculo, agora somente a primeira letra.
+    max-width: initial;                           ---Removemos o espaçamento de 4ch/caracteres e foi dado como inicial
+  }
+}
+
+/*o !inportant faz com que o elemento fique como prioridade não ira ser subscravido po outros/
+
+*/

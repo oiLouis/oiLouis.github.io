@@ -1,0 +1,117 @@
+.header {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.header-menu a {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #141414;
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .header {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+  }
+  .header-menu a {
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+}
+
+/*
+ÁREA DEDICADA PARA CRAR UMA MARGIN INTERNA NO CABEÇALHO:
+
+
+.header 
+
+  max-width: 1200px;                           ---Tamanho maximo do site, para não ficar áreas em branco sem sentido.
+
+  padding: 40px 20px;                          ---Esse padding foi em relação a todo conteúdo do cabeçalho:
+.                                              "com padding e melhor que margin pois ele permite que tu pinte todo o 
+.                                               background, não só a marca por exemplo."
+
+  margin: 0 auto;                              ---Pra cima e para baixo 0, pro lado e para o outro auto.
+  display: flex;                               ---Deixou os elementos lado a lado
+  justify-content: space-between;              ---Colocou os elementos nas pontas
+  align-items: center;                         --- Alinha a marca aos links
+
+
+
+.header-menu 
+
+  display: flex;                              ---Definido display flex
+  flex-wrap: wrap;                            ---quando a janela diminur os itens sejam quebrados juntamente
+  gap: 10px;                                  ---Distanciamento dos itens
+  justify-content: center;                    --- irá jusntificar os itens ao centro JÁ AJUDA NA PARTE DE 
+  .                                               RESPONCIVIDADE
+
+
+
+header-menu 
+ESSA PARTE TEMOS OS ITENS FLEXIVEIS DO TITULO LINKS #
+
+.header-menu a 
+
+  font-size: 1.125rem;                        ---Tamanho da fonte do site  
+  line-height: 1.3;                           ---Tamanho da altura da linha
+  padding: 10px 20px;                         ---Cria uma caixa no elemento
+  text-decoration: none;                      ---Tira o sublinhado do link
+  color: #141414;                             ---Cor do texto
+  display: block;                             ---Transforma o item em bloco
+
+
+
+PARTE DEDICADA A OS LINKS DE DIRECIONAMENTO 
+
+  font-size: 1.125rem;                        ---define o tamanho da letra dos links
+  line-height: 1.3;                           ---define a autura da linha do link
+  padding: 10px 20px;                         ---foi criada uma caixa de 10px para cima/baixo 20px lado/lado
+  text-decoration: none;                      ---tirou o sublinhado do link
+  color: #141414;                             ---
+  display: block;                             ---definimos o display para pegar os valoores corretamente do padding
+
+
+ONDE NOS TORNAMOS O SITE RESPONSIVO 
+
+@media (max-width: 800px) {
+  .header {
+    flex-direction: column; ----------- MUDA A ORENTAÇÃO DO FLEX PARA COLUNA
+    gap: 40px;              ----------- AUMENTARA DISTANCIA ENTRE OS ITENS
+    padding: 20px;          ----------- DIMINUI O ESPAÇO DAS CAIXAS DE LINK
+  }
+
+  MELHORAR A PARTE DO LINK/BOTÃO DA ÁREA DE CLICK
+  .header-menu a {
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+*/

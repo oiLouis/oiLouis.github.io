@@ -1,0 +1,157 @@
+.introducao {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+/*
+PRIMEIRO ESTILIZAR OS ELEMENTOS INTRODUÇÃO 
+introdução seria a parte principal do site, indincando o que seria esse site.... é onde usamos a tag <main>
+"tag <br> quebra conteudo"
+
+  "max-width: 1200px;"                 -Largura máxima respeitando o body 
+  "padding: 40px 20px;"                -Definir uma caixa, separando o topo e a parte de baixo desse elemento
+.                                       desgrudar elemento do body
+  "margin: 0 auto;""                   -Colocar os elementos alinhados.
+
+
+  display: grid;                      -Definimos display grid, para ativar o template é o gap
+  grid-template-columns: 1fr 2fr;     -Aqui são as colunas do site que você quer.
+  gap: 100px;                         -É o espaçamento dos elementos, da imagem e texto
+
+
+  align-items: center;                -Alinhando itens ao centro. no caso a imagem e o texto.
+*/
+
+.introducao h1 {
+  font-size: 4.5rem;
+  line-height: 1.125;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/*
+.introducao h1 
+
+  font-size: 4.5rem;
+  line-height: 1.125; 
+  
+"quando e colocado o valor puro em "line-height" ele ira mutiplicar com base no font-size que é:
+.                                 4.5*16=72 * 1.125= 81 
+.       no cso ele está relativo ao de cima, se você mudar ele ja multiplica junto."
+
+
+margin-bottom: 30px;       ---define a margin area na parte inferior de um elemento, define a área do quadrado.
+
+position: relative;        ---"para ativar o position absolute do elemento absoluto/detalhe no titulo h1"
+
+*/
+
+/*ADICIONAMOS UM ELEMENTO ABSOLUTO ATRÁS DO TITULO/TEXTO DO H1*/
+.introducao h1::before {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url("../img/detalhe.svg") no-repeat center;
+  position: absolute;
+  top: -15px;
+  left: -40px;
+  z-index: -1;
+}
+
+/*
+  "content: "";"                    -um elemento absoluto sempre tem que haver um conteúdo, para poder existir.
+
+  display: block;                   -definimos um display block para ele ser tratado como bloco.
+  width: 130px;                     -definir o tamanho da altura do elemento é uma 
+  height: 100px;                     largura do elemento também em relação ao tamanho da imagem.
+
+
+
+
+  background: url("../img/detalhe.svg") no-repeat center;        -aqui é o detalhe declaramos ele por meio de um
+ .                                                               background e damos o diretorio url e um no repeat 
+ .                                                               para ele não se repetir, e um alinhamento ao centro
+
+
+
+AGORA A PARTE DE POSICIONAMENTO:
+tenha sempre em mente que o elemento pai tem que ter "position relative" para que o posicionamento fique em relação a ele. pois se não definirmos isso ele estará em relação ao body.   // no caso o elemento que queremos como pai e o
+ .                                                                     h1
+
+  position: absolute;    -propriedade para tornar o elemento movel no grid.
+  top: -15px;            -posicão em relação ao topo do pai.
+  left: -40px;           -esquerda em relação ao esquerda do pai.
+  z-index: -1;           -deixar o item por trás do elemento pai h1.
+
+*/
+
+.introducao p {
+  font-size: 1rem;
+  color: #525252;
+}
+
+/* TORNANDO O MAIN RESPONSIVO */
+/* quando chegar em 1000px ira diminuir a fonte de h1*/
+
+@media (max-width: 1000px) {
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .introducao h1 {
+    font-size: 2rem;
+  }
+  .introducao h1::before {
+    width: 30px;
+    height: 10px;
+    left: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .introducao {
+    grid-template-columns: 1fr;
+  }
+  .introducao img {
+    display: none;
+  }
+}
+
+/* 
+QUANDO CHEGAR A 800PX IRÁ IQUALAR AS "FR" DE COMUNA PARA A IMAGEM FICAR PROPORCIONAL AO TEXTO
+
+@media (max-width: 800px) {
+
+  .introducao {
+    grid-template-columns: 1fr 1fr;             ---Diminuir o espaçamento dentre os elementos de novo.
+    gap: 40px;                        
+}
+
+
+  .introducao h1 {
+    font-size: 2rem;                           ---Diminuir o tamanho da fonte do h1 pois estava grande.
+  }
+
+
+  .introducao h1::before {                     ---Diminnuir o detalhe pois estava desproporcional ao texto também.
+    width: 30px;
+    height: 10px;
+    left: 0px;                                ---Lançamos o letf 0 para ele ficar certo
+    
+  }
+}
+*/
+
+/* finalizando quando passar de 500px vai ter apenas uma coluna "1fr" e eliminamos a imagem pois não era de extrema necessidade que ficasse aqui*/
