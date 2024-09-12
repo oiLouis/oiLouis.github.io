@@ -1,4 +1,3 @@
-/*Começamos sempre com a mesma estrutura do site de sempre como nas outras partes*/
 .experiencia {
   max-width: 1200px;
   padding: 40px 20px;
@@ -8,25 +7,6 @@
   gap: 100px;
 }
 
-/*
-UMA COISA QUE PODERIA SER MELHORADA, A ESTRUTURA DE INICIO E SEMPRE A MESMA DA INTRODUÇÃO ENTÃO PODERIAMOS CRIAR APENAS UMA CLASSE CHAMADA "CONTEINER"
-
-.conteiner {
-  max-width: 1200px;
-  padding: 40px 20px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 100px;
-}
-
-pegaria essa classe e colaria na class= "conteiner experiencia" é na class="contriner experiencia"
-pois aplicaria todas as classes de conteiner em todas seções que criariamos. ou seja reutilizaremos as mesmas classes. 
-*/
-
-/*AGORA IREMOS ESTILIZAR O SUBTITULO, MAS COMO ELE SERÁ UMA CLASSE QUE IREMOS REUTILIZAR, SERÁ ESTILIZADO NO GLOBAL.*/
-
-/*DEFININDO COR DO ELEMENTO*/
 .experiencia .subtitulo {
   color: #e0e0e0;
 }
@@ -45,22 +25,6 @@ pois aplicaria todas as classes de conteiner em todas seções que criariamos. o
   color: #141414;
 }
 
-/*
-.experiencia-texto {
-  font-size: 1.5rem;                       ---Começamos definindo o tamanho da letra como sempre
-  line-height: 1.53;                       ---Altura dela proporcional a o font-size novamente
-  margin-bottom: 60px;                     ---Um margin-Botton de 60px para dar aqule espaço 
-  max-width: 40ch;                         ---É uma quantidade de caracteres máximo para dar um estilo também
-  color: #525252;                          ---Cor da fonte do texto, um pouco mais clarinha.
-
-}
-.experiencia-texto strong {
-  color: #141414;                          ---É uma cor nas strong para dar mais um destaque nelas
-}
-*/
-
-/*VAMOS AGORA PARA A PARTE DA EMPRESA*/
-
 .empresa {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -78,16 +42,16 @@ pois aplicaria todas as classes de conteiner em todas seções que criariamos. o
   width: 4px;
   height: 20px;
   background: linear-gradient(#b6f829, #67dd0a);
-  position: absolute; /*tira elementos do fluxo do layout*/
+  position: absolute;
   top: 20px;
   left: -4px;
 }
 
 .empresa-ano {
-  position: absolute; /*quando você define um elemento como position abisolute ele irá ter um tamnho do tamanho do conteúdo exato, ou seja ele alinha em relação a ele mesmo... um macete seria definirmos um WIDTH de um tamanho que seja maior que o conteúdo.*/
+  position: absolute;
   top: 22px;
   left: -100px;
-  width: 80px; /*aqui.. isso e só em questão de estilo não influencia em nada*/
+  width: 80px;
   color: #525252;
   font-size: 0.875rem;
 }
@@ -119,8 +83,6 @@ pois aplicaria todas as classes de conteiner em todas seções que criariamos. o
   padding: 5px 10px;
 }
 
-/*PARTE RESPONSIVA DA EXPERIÊNCIA*/
-
 @media (max-width: 800px) {
   .experiencia {
     grid-template-columns: 1fr;
@@ -148,112 +110,3 @@ pois aplicaria todas as classes de conteiner em todas seções que criariamos. o
     grid-template-columns: 1fr;
   }
 }
-/*
-
-ESTA PARTE FOI DEDICADA PARA CRIAÇÃO DE UMA CAIXA PARA CADA INFORMAÇÃO SOBRE AS EMPRESAS QUE CRIAMOS ANTES.
-
-.empresa {
-
-  display: grid;                             ---Ativa as proriedades do grid define o display
-  grid-template-columns: 1fr 1fr;            ---Divide a classe em duas colunas 
-  gap: 10px 20px;                            ---Cria 10px de spaço na horizontal e 20px na vertical dos elementos.
-  padding: 20px;                             ---Não deixa as informações crudadas
-  background: #f5f5f5;                       ---Cor das caixas
-  margin-bottom: 20px;                       ---Espaçamento entre os elementos/os blocos de informações
-  border-radius: 4px;                        ---Bordas arredondadas
-  position: relative;                        ---Teremos elementos absolutos então já definimos uma position relative.
-  .                                             pois empresa-ano está dentro da class= empresa
-}
-
-SERÁ ADICIONADO UM ELEMENTO IQUAL O DO TITULO UTILIZANDO A propriedade :BEFORE
-
-.empresa::before {
-  content: "";                                ---Para criar elemento before sempre temos que ter um content.
-  display: block;                             ---Definir ele como um bloco.
-  width: 4px;                                 ---Posicionamento
-  height: 20px;                               ---Posicionamento
-  background: linear-gradient(#b6f829, #67dd0a);         ---Cor do elemento linear
-  position: absolute;                         ---Tira elementos do fluxo do layout, deixa livre para editar.
-  top: 20px;                                  ---Posicionamento
-  left: -4px;                                 ---Posicionamento
-}
-
-ESTILIZANDO O ANO DE ATUAÇÃO
-
-.empresa-ano {
-
-  position: absolute;                       ---Nosso elemento que será redirecionado
-  top: 20px;                                ---Posicionamento
-  left: -100px;                             ---Posicionamento
-  font-size: 0.875rem;                      ---Diminuir fonte
-}
-
-ESTILIZANDO OS TITULOS GERAIS
-
-.empresa-titulo {
-
-  font-size: 1.125rem;                       ---Tamanho da fonte
-  line-height: 1.1;                          ---Altura da linha
-  font-weight: bold;                         ---font-weight especifica o peso ou a intensidade da fonte, nesse caso 
-.                                               negrito.
-}
-
-ESTILIZANDO TEXTOS 
-
-.empresa-texto {
-
-  font-size: 0.875rem;                       ---Tamanho da fonte
-  line-height: 1.4;                          ---Altura da linha/do corpo do texto
-  color: #525252;                            ---Cor da fonte
-}
-
-
-AGORA VAMOS ESTILIZAR AS HABILIDADES
-
-.empresa-habilidades {
-  display: flex;                            ---Tornar o display flex.
-  flex-wrap: wrap;                          ---Quebra as os itens caso não caiba um lado do outro
-  .                                            conforme fechamos a janela.
-  gap: 10px;                                ---Espacamento dos elementos.
-  align-content: start;                     ---Os itens se alinham sempre no inicio.
-}
-
-
-PARA DEIXAR OS ITENS ORGANIZADOS EM "CAIXAS" DEVEMOS FALAR COM CADA UM DELES "AS LI"
-
-.empresa-habilidades li {
-  font-size: 0.875rem;                      ---Tamanho da fonte
-  line-height: 1.4;                         ---Altura da linha
-  border-radius: 4px;                       ---bordas arredondadas dos quadradin
-  background: #ffffff;                      ---Cor de fundo do quadradin
-  padding: 5px 10px;                        ---Tamanho do Quadrado
-}
-
-
-PARTE RESPONSIVA DA EXPERIÊNCIA
-
-@media (max-width: 800px) {
-  .experiencia {
-    grid-template-columns: 1fr;             ---Em 800px terá apenas uma coluna
-    gap: 40px;                              ---Novo espaçamento de experiência
-  }
-  .experiencia .subtitulo {
-    color: #141414;                         ---Em 800px passa a ter uma cor diferente
-  }
-  .experiencia-texto {
-    font-size: 1.25rem;                     ---Novo tamanho de texto
-  }
-  .empresa-ano {
-    position: initial;                      ---Volta para a posição inicial, pois estava sumindo
-    order: 1;                               ---Faz com que o ano saia do fluxo inicial
-    width: initial;                         ---para tirar a definição de espaçamento
-    text-align: left;                       ---Direcionando o alinhamento do elemento para a esquerda
-  }
-
-  isso não é nessesario só vai adicionar uma palavra ano nos números
-  .empresa-ano::before {
-    content: "Ano: ";
-  }
-}
-
-*/

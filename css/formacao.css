@@ -127,18 +127,16 @@
   color: #8f8f8f;
 }
 
-/*colocando itens um ao lado do outro*/
 .cursos li {
   display: flex;
   justify-content: space-between;
 }
 
-/*HORA DA PARTE RESPONSIVA DO SITE*/
 @media (max-width: 800px) {
   .formacao-container {
     grid-template-columns: 1fr;
     padding: 60px 20px;
-    gap: 40px; /*o gap estava entre formação e a parte do conteúdo*/
+    gap: 40px;
   }
   .formacao .subtitulo {
     color: #ffffff;
@@ -146,169 +144,8 @@
   .formacao-texto {
     font-size: 1.25rem;
   }
-  /*dedicada aos itens do lado dos titulos*/
   .formacao-extra h3::before {
     position: initial;
     margin-bottom: 10px;
   }
 }
-
-/*
-
-MUDANÇA DO BACKGROUND COR PRETA:
-.formacao {
-  background: #141414;
-  color: #ffffff;
-}
-
-
-FALA COM TODA A DIV DE FORMAÇÃO TODAS CARACTERISTICAS, BASICAMENTE E A MESMA CONFIGURAÇÃO DE ANTES:
-.formacao-container {
-  max-width: 1200px;                    
-  padding: 40px 20px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-}
-
-CRIAÇÃO DE PSEUDO ELEMENTO QUE IRA FICAR POR CIMA DE DUAS ÁREAS DO SITE:
-.formacao-container::after {                definimos after porque vai ser depois..
-  content: "";
-  display: block;
-  width: 130px;
-  height: 100px;
-  background: url("../img/detalhe.svg") no-repeat center center;
-  position: absolute;
-  bottom: -50px;
-  left: 20px;
-}
-
-
-FALAR COM AS LETRAS GIGANTES DA ESQUERDA:
-.formacao .subtitulo {
-  color: #000000;
-}
-
-FALAR COM O TEXTO DA DIREITA:
-.formacao-texto {
-  font-size: 1.5rem;
-  line-height: 1.33;
-  max-width: 40ch;
-  margin-bottom: 60px;
-  color: #a3a3a3;
-}
-
-
-.formacao-texto strong {
-  color: #ffffff;                         ---Strings passam a ter cor mais destacavel
-}
-
-
-
-FALAR COM A LISTAS DA FACULDADES E CURSOS:
-.faculdade-lista {
-  display: flex;                          ---Metendo um display flex já deixa os itens um ao lado do do outro
-  flex-wrap: wrap;                        ---Caso não caiba quebre
-  gap: 20px;                              ---Esspaçamento dos itens
-  margin-bottom: 60px;                    ---Espaçamento dos itens   
-}
-
-
-
-POR PADRÃO QUANDO O DISPLAY NÃO E FLEX ELE FICA DO TAMANHO "MÁXIMO DO CONTEÚDO/texto". PARA QUE OS CONTEÚDOS FIQUEM UM DO LADO DO OUTRO DO MESMO TAMANHO USAMOS UM FLEX: 1;
-
-os códigos agora e para falar com cada item da lista/neste caso com cada caixa de informações:
-.faculdade {
-  background: #000000;
-  flex: 1;
-  padding: 20px;                         ---Caixa de 20px  
-  border-radius: 4px;                    ---Bordas Arredondadas
-  display: flex;                         ---propriedades para os spans aplicarem os efeitos de espaçamento
-  flex-direction: column;                ---propriedades para os spans aplicarem os efeitos de espaçamento
-}
-
-FALAR COM OS TITULOS DE CADA CAIXA:
-.faculdade-tipo {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  color: #a3a3a3;
-
-
-.                                      margin-bottom: 10px; 
-  
-  botamos uma margin bottom mas não aplicara os efeitos pois eles são span, para modificar isso temos que modificar eles e por para display: flex; e definimos o flex-direction: column; OU MAIS SIMPLES DEFINE ELE COMO DISPLAY: INLINE-BLOCK;
-}
-
-
-
-FALAR COM OS SUBTITULOS DAS CAIXAS:
-.faculdade-curso {
-  flex: 1;                               vai fazer com que o item cresça e não deixa os 
-  .                                      elementos de instituição ficarem desalinhados na caixa
-  font-size: 1.125rem;
-  line-height: 1.4;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-
-CRIAR UM PSEUDOELEMENTO IQUAL O ANTERIOR, SÓ QUE PARA ESTILIZAR MAIS:
-.faculdade-curso::before {
-  content: "";
-  display: block;
-  width: 4px;
-  height: 20px;
-  background: linear-gradient(#b6f829, #67dd0a);
-  position: absolute;                     ---Tira elementos do fluxo do layout
-  left: -24px;                            ---É a soma da width + height bota negativo para ficar na esquerda
-}
-
-FALAR COM O ULTIMO ELEMENTO DAS CAIXAS:
-.faculdade-instituicao {
-  font-size: 1.125rem;
-  color: #a3a3a3;
-}
-
-
-EDITANDO A ULTIMA PARTE DE FORMAÇÃO:
-.cursos {
-  margin-bottom: 60px;
-}
-
-
-FALA COM OS DOIS H3 FINAIS DOS CURSOS E IDIOMAS
-.formacao-extra h3 {
-  font-size: 0.875rem;
-  line-height: 1.4;
-  color: #8f8f8f;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-
-CRIANDO OUTRO PSEUDOELEMENTO SÓ QUE AGORA VAMOS USAR UM SVG QUE FOI CRIADO, SVG E COMO UM ICONE:
-
-.formacao-extra h3::before {
-  display: block;
-  content: "";
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  left: -36px;
-  top: -4px;
-}
-
-
-LINCANDO AS CARACTERISTICAS DO H3 A CADA UM DOS TITULOS CURSOS E IDIOMAS:
-
-.cursos h3::before {
-  background: url("../img/cursos.svg") no-repeat center center;
-}
-
-.idiomas h3::before {
-  background: url("../img/idiomas.svg") no-repeat center center;
-}
-
-*/
